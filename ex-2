@@ -1,0 +1,32 @@
+using System;
+
+namespace MyApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a; 
+            int x;
+            int[] vetor = new int[6]; 
+            string minhaFrase = "praise the sun [T]"; 
+            x = 0;
+            a = 2;
+           while(a<6){
+            vetor[a]=10*a;
+            a++;
+
+           }
+
+
+           for(x=0;x<6;x++){
+
+             Console.Write("Valor vetor: ");
+            Console.WriteLine(vetor[x]);
+
+            
+           }
+            Console.WriteLine(minhaFrase);
+        }
+    }
+}
