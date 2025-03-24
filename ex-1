@@ -1,0 +1,38 @@
+using System;
+
+namespace MyApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a; 
+            int b;
+            int c;
+            int[] vetor = new int[4]; 
+            string minhaFrase = "Faz o L"; 
+
+            a = 10;
+            b = 20;
+            c = a+b;
+            c = c/2;
+            c = c - 40;
+            vetor[3] = a+b+c;
+
+
+            Console.Write("Valor a: ");
+            Console.WriteLine(a);
+
+            Console.Write("Valor b: ");
+            Console.WriteLine(b);
+
+             Console.Write("Valor c: ");
+            Console.WriteLine(c);
+
+             Console.Write("Valor vetor: ");
+            Console.WriteLine(vetor[3]);
+
+            Console.WriteLine(minhaFrase); 
+        }
+    }
+}
