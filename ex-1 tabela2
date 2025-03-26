@@ -1,0 +1,33 @@
+using System;
+using System.Globalization;
+
+
+namespace MyApplication;
+
+public class Class1
+{
+
+    static void Main()
+    {
+        Console.Write("capital inicial\n");
+        double capital = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        Console.Write("valor da taxa\n");
+        double taxa = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        Console.Write("periodo (meses)\n");
+        double periodo = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        double taxadeci = taxa / 100;
+
+        double soma = taxadeci + 1;
+
+        double montante = capital *(Math.Pow(soma,periodo));
+
+        Console.WriteLine($"montante final:{montante:F2}");
+
+        Console.WriteLine($"montante final:{montante:F2}");
+     
+
+    }
+}
