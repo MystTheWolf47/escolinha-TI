@@ -1,0 +1,44 @@
+using System;
+using System.Globalization;
+
+namespace MyApplication;
+
+public class Class1
+{
+    static void Main(string[] args)
+    {
+        Console.Write("capital inicial\n");
+        double capital = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        Console.Write("valor da taxa\n");
+        double taxa = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        Console.Write("periodo (meses)\n");
+        double periodo = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        for (int i = 0; i < periodo; i++)
+        {
+            double taxadeci = taxa / 100;
+
+            double soma = taxadeci + 1;
+
+            double montante = capital * (Math.Pow(soma, i));
+
+            double rendliqui = montante - capital;
+
+            double rendaAcumulada = rendliqui + montante;
+
+            Console.WriteLine($"valores mes {i}:\n");
+            Console.WriteLine($"montante: {montante:F2}:\n");
+            Console.WriteLine($"rendimento liquido: {rendliqui:F2}:\n");
+            Console.WriteLine($"renda acumulada: {rendaAcumulada:F2}:\n");
+
+
+
+        }
+
+    }
+
+}
+
+
