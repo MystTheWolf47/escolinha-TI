@@ -1,0 +1,33 @@
+using System;
+using System.Globalization;
+
+
+namespace MyApplication;
+
+public class Class1
+{
+
+    static void Main()
+    {
+        Console.Write("valor Almejado\n");
+        double montante = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        Console.Write("valor da taxa\n");
+        double taxa = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        Console.Write("periodo (anos)\n");
+        double periodo = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+
+
+        double taxadeci = taxa / 100;
+
+        double soma = taxadeci + 1;
+
+        double capital = montante / (Math.Pow(soma, periodo));
+
+        Console.WriteLine($"capital a ser investido:{capital:F2}");
+
+
+    }
+}
