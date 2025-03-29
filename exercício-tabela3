@@ -1,0 +1,195 @@
+using System;
+using System.Globalization;
+using System.Collections.Generic;
+
+namespace MyApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<double> montantePor = new List<double>();
+            List<List<double>> montanteMeses = new List<List<double>>();
+            List<List<double>> rentimentoMeses = new List<List<double>>();
+            List<List<double>> rendaAcumuMeses= new List<List<double>>();
+            List<double> rendaAcumuladaPor = new List<double>();
+            List<double> rendimentoLiguidPor = new List<double>();
+            bool menu = true;
+
+            while (menu)
+            {
+                Console.Clear();
+                Console.WriteLine("+---------menu---------+");
+                Console.WriteLine("Digite o número da opção:");
+                Console.WriteLine("1: Portfólio");
+                Console.WriteLine("2: Adicionar investimento");
+                Console.WriteLine("0: Sair");
+
+                string op = Console.ReadLine();
+
+                switch (op)
+                {
+                    case "1":
+                        Console.Clear();
+                        if (montantePor.Count == 0)
+                        {
+                            Console.WriteLine("Nenhum investimento registrado.");
+                        }
+                        else
+                        {
+                           
+                            for (int i = 0; i < montantePor.Count; i++)
+
+                            { 
+                                Console.WriteLine($"+-------------------------------------------INVETIMENTO{i+1}-------------------------------------------+");
+                                for (int j = 0; j < montanteMeses[i].Count; j++)
+                                {
+                                    Console.Write($"\n|Mês {j + 1} | montante: R${montanteMeses[i][j].ToString("F2", CultureInfo.InvariantCulture)}\t");
+                                    Console.Write($" | renda acumulada: R${rendaAcumuMeses[i][j].ToString("F2", CultureInfo.InvariantCulture)}\t");
+                                    Console.Write($" | rendimento: R${rentimentoMeses[i][j].ToString("F2", CultureInfo.InvariantCulture)} \t");
+                                }
+                                Console.WriteLine($"\n+--------------------------------------------------------------------------------------------------+");
+                                Console.Write($"|Investimento : R${montantePor[i].ToString("F2", CultureInfo.InvariantCulture)}\t|");
+                                Console.Write($"|Renda Acumulada : R${rendaAcumuladaPor[i].ToString("F2", CultureInfo.InvariantCulture)}|\t");
+                                Console.Write($"|Rendimento Líquido : R${rendimentoLiguidPor[i].ToString("F2", CultureInfo.InvariantCulture)}\n|");
+                                Console.WriteLine($"+--------------------------------------------------------------------------------------------------+");
+                            }
+                        }
+                        Console.WriteLine("Voltar para o menu? s/n");
+                        string op2 = Console.ReadLine();
+                        menu = op2 == "s";
+                        break;
+
+                    case "2":
+                        Console.Clear();
+                        Console.Write("Capital inicial: ");
+                        double capital = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                        Console.Write("Valor da taxa (%): ");
+                        double taxa = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                        Console.Write("Período (meses): ");
+                        int periodo = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                        Console.WriteLine("Período (dias): ");
+                        double periodoDias = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                        Console.WriteLine("programar retirada? s/n");
+                        string progamarRetirada = Console.ReadLine();
+
+                        double mesRetirada = 0;
+
+                        double valorRetirada = 0;
+
+                        if (progamarRetirada == "s")
+                        {
+                            Console.WriteLine("mes da retirada: ");
+                            mesRetirada = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                            Console.WriteLine("valor retirada: ");
+                             valorRetirada = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                        }
+
+                        double montante = 0;
+                        double rendaAcumulada = 0;
+                        double rendliqui = 0;
+
+                        double taxadeci = taxa / 100;
+                        double taxadeDias = taxadeci / 30;
+                        double soma = taxadeci + 1;
+                        double somadias = taxadeDias + 1;
+
+                        List<double> montanteMensal = new List<double>();
+                        List<double> rendimentoMensal = new List<double>();
+                        List<double> AcumuadoMensal = new List<double>();
+
+                        for (int i = 1; i <= periodo; i++) 
+                        {
+                            montante = capital * Math.Pow(soma, i);
+
+                            rendliqui = montante - capital;
+
+                            rendaAcumulada = rendliqui + montante;
+                            if(mesRetirada == i)
+                            {
+                                montante = montante - valorRetirada;
+                                capital = capital - valorRetirada;
+                                if (capital == 0)
+                                {
+                                    
+                                    capital = rendliqui;
+
+                                }
+
+                            }
+
+                            if (periodoDias != 0)
+                            {
+                                double montanteDias = capital * Math.Pow(somadias, periodoDias);
+
+                                montante += montanteDias - capital;
+                            }
+
+                            montanteMensal.Add(montante);
+                            rendimentoMensal.Add(rendliqui);
+                            AcumuadoMensal.Add(rendaAcumulada);
+                        }
+
+                        
+                        montantePor.Add(montanteMensal[periodo - 1]);
+                        montanteMeses.Add(montanteMensal);
+                        
+
+                        rendimentoLiguidPor.Add(rendimentoMensal[periodo - 1]);
+                        rentimentoMeses.Add(rendimentoMensal);
+
+                        rendaAcumuladaPor.Add(AcumuadoMensal[periodo - 1]);
+                        rendaAcumuMeses.Add(AcumuadoMensal);
+
+
+                        Console.WriteLine($"Montante final: R${montante.ToString("F2", CultureInfo.InvariantCulture)}");
+                        Console.WriteLine("Voltar para o menu? s/n");
+                        string op5 = Console.ReadLine();
+                        menu = op5 == "s";
+                        break;
+
+                    case "0":
+                        Console.WriteLine("Saindo...");
+                        menu = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Opção inválida, tente novamente.");
+      
+                        
+                        
+                        
+                        
+                        break;
+                   
+                
+                
+                
+                }
+             
+            
+            
+            
+            
+            }
+        }
+   
+    
+    
+    
+    
+    
+    }
+
+
+
+
+
+
+}
