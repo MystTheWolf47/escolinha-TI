@@ -1,0 +1,258 @@
+using System;
+using System.Globalization;
+using System.Collections.Generic;
+
+namespace MyApplication
+{
+    
+    class Investimento
+    {
+        public double CapitalInicial { get; set; }
+        public double Taxa { get; set; }
+        public int PeriodoMeses { get; set; }
+        public double PeriodoDias { get; set; }
+        public double ValorRetirada { get; set; }
+        public double MesRetirada { get; set; }
+        public List<double> MontanteMensal { get; set; }
+        public List<double> RendimentoMensal { get; set; }
+        public List<double> RendaAcumuladaMensal { get; set; }
+        public double MontanteFinal { get; set; }
+        public double RendimentoFinal { get; set; }
+        public double RendaAcumuladaFinal { get; set; }
+
+        public Investimento(double capitalInicial, double taxa, int periodoMeses, double periodoDias, double mesRetirada, double valorRetirada)
+        {
+            CapitalInicial = capitalInicial;
+            Taxa = taxa;
+            PeriodoMeses = periodoMeses;
+            PeriodoDias = periodoDias;
+            MesRetirada = mesRetirada;
+            ValorRetirada = valorRetirada;
+
+            MontanteMensal = new List<double>();
+            RendimentoMensal = new List<double>();
+            RendaAcumuladaMensal = new List<double>();
+
+            CalcularInvestimento();
+        }
+
+        private void CalcularInvestimento()
+        {
+            double montante = CapitalInicial;
+            double rendimento = 0;
+            double rendaAcumulada = 0;
+
+            double taxaMensal = Taxa / 100;
+            double taxaDiaria = taxaMensal / 30;
+            double somaMensal = taxaMensal + 1;
+            double somaDiaria = taxaDiaria + 1;
+
+            for (int i = 1; i <= PeriodoMeses; i++)
+            {
+               
+                montante = CapitalInicial * Math.Pow(somaMensal, i);
+                rendimento = montante - CapitalInicial;
+                rendaAcumulada = rendimento + montante;
+
+            
+                if (MesRetirada == i)
+                {
+                    montante -= ValorRetirada;
+                    CapitalInicial -= ValorRetirada;
+                    if (CapitalInicial == 0)
+                    {
+                        CapitalInicial = rendimento;
+                    }
+                }
+
+              
+                if (PeriodoDias != 0)
+                {
+                    double montanteDiario = CapitalInicial * Math.Pow(somaDiaria, PeriodoDias);
+                    montante += montanteDiario - CapitalInicial;
+                }
+
+                MontanteMensal.Add(montante);
+                RendimentoMensal.Add(rendimento);
+                RendaAcumuladaMensal.Add(rendaAcumulada);
+            }
+
+            MontanteFinal = MontanteMensal[PeriodoMeses - 1];
+            RendimentoFinal = RendimentoMensal[PeriodoMeses - 1];
+            RendaAcumuladaFinal = RendaAcumuladaMensal[PeriodoMeses - 1];
+        }
+    }
+
+    class Portfolio
+    {
+        public List<Investimento> Investimentos { get; private set; }
+
+        public Portfolio()
+        {
+            Investimentos = new List<Investimento>();
+        }
+
+        public void AdicionarInvestimento(Investimento investimento)
+        {
+            Investimentos.Add(investimento);
+        }
+
+        public void ExibirInvestimentos()
+        {
+            if (Investimentos.Count == 0)
+            {
+                Console.WriteLine("Nenhum investimento registrado.");
+            }
+            else
+            {
+                for (int i = 0; i < Investimentos.Count; i++)
+                {
+                    var investimento = Investimentos[i];
+                    Console.WriteLine($"+----------------------------------- INVESTIMENTO {i + 1} -----------------------------------+");
+
+                    for (int j = 0; j < investimento.MontanteMensal.Count; j++)
+                    {
+                        Console.WriteLine($"| Mês {j + 1} | Montante: R${investimento.MontanteMensal[j]:F2} | " +
+                                          $"Renda Acumulada: R${investimento.RendaAcumuladaMensal[j]:F2} | " +
+                                          $"Rendimento: R${investimento.RendimentoMensal[j]:F2} |");
+                    }
+
+                    Console.WriteLine($"+-----------------------------------------------------------+");
+                    Console.WriteLine($"| Montante Final: R${investimento.MontanteFinal:F2} | " +
+                                      $"Rendimento Líquido: R${investimento.RendimentoFinal:F2} | " +
+                                      $"Renda Acumulada: R${investimento.RendaAcumuladaFinal:F2} |");
+                    Console.WriteLine($"+-----------------------------------------------------------+");
+                }
+    
+            
+            
+            
+            
+            }
+        }
+
+    
+    
+    
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool menu = true;
+            Portfolio portfolio = new Portfolio();
+
+            while (menu)
+            {
+                Console.Clear();
+                Console.WriteLine("+--------- Menu ---------+");
+                Console.WriteLine("Digite o número da opção:");
+                Console.WriteLine("1: Portfólio");
+                Console.WriteLine("2: Adicionar investimento");
+                Console.WriteLine("0: Sair");
+
+                string op = Console.ReadLine();
+
+                switch (op)
+                {
+                    case "1":
+                        Console.Clear();
+                        portfolio.ExibirInvestimentos();
+                        Console.WriteLine("Voltar para o menu? s/n");
+                        string op2 = Console.ReadLine();
+                        menu = op2 == "s";
+                        break;
+
+                    case "2":
+                        Console.Clear();
+
+                       
+                        double capital = ObterEntrada("Capital inicial: ");
+
+                        double taxa = ObterEntrada("Valor da taxa (%): ");
+
+                        int periodo = (int)ObterEntrada("Período (meses): ");
+
+                        double periodoDias = ObterEntrada("Período (dias): ");
+
+                        Console.WriteLine("Programar retirada? s/n");
+                        string progamarRetirada = Console.ReadLine();
+                        double mesRetirada = 0;
+                        double valorRetirada = 0;
+
+                        if (progamarRetirada == "s")
+                        {
+                            mesRetirada = ObterEntrada("Mês da retirada: ");
+
+                            valorRetirada = ObterEntrada("Valor da retirada: ");
+                       
+                        
+                        }
+
+                       
+                        Investimento novoInvestimento = new Investimento(capital, taxa, periodo, periodoDias, mesRetirada, valorRetirada);
+
+                        portfolio.AdicionarInvestimento(novoInvestimento);
+
+                        Console.WriteLine($"Montante final: R${novoInvestimento.MontanteFinal:F2}");
+
+                        Console.WriteLine("Voltar para o menu? s/n");
+
+                        string op5 = Console.ReadLine();
+                        menu = op5 == "s";
+                        break;
+
+                    case "0":
+                        Console.WriteLine("Saindo...");
+                        menu = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Opção inválida, tente novamente.");
+                        break;
+         
+                
+                }
+
+
+
+            }
+
+
+        }
+
+        
+        static double ObterEntrada(string mensagem)
+        {
+            double valor;
+            while (true)
+            {
+                Console.Write(mensagem);
+                if (double.TryParse(Console.ReadLine(), NumberStyles.Any, CultureInfo.InvariantCulture, out valor) && valor > 0)
+                    return valor;
+                Console.WriteLine("Valor inválido. Tente novamente.");
+    
+            
+            
+            
+            
+            }
+
+
+
+
+
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+}
