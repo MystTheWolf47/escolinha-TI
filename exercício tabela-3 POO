@@ -229,7 +229,7 @@ namespace MyApplication
             while (true)
             {
                 Console.Write(mensagem);
-                if (double.TryParse(Console.ReadLine(), NumberStyles.Any, CultureInfo.InvariantCulture, out valor) && valor > 0)
+                if (double.TryParse(Console.ReadLine(), NumberStyles.Any, CultureInfo.InvariantCulture, out valor))
                     return valor;
                 Console.WriteLine("Valor inválido. Tente novamente.");
     
