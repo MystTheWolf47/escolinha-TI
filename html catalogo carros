@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet"href="StyleSheet.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>the show is on the hour</title>
+    <style>
+        #textobranco {
+            color: white;
+        }
+
+        .centralizado {
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color:black">
+    <form id="form1" runat="server">
+    </form>
+    <header>
+        <div class="content">
+            
+            <div>
+                <nav>
+                    <p class=brand><span id="textobranco"><strong>please stand by</strong> </span></p>
+
+                    <ul>
+                        <li><a href="#catalog"><span id="textobranco">catalogo</span></a> </li>
+                        <button>login</button>
+                    </ul>
+                </nav>
+                <div class="header-block ">
+                    <div class="text">
+                        <h2><span id="textobranco">Drive your dream</span></h2>
+                        <p><span id="textobranco">voce sonha e nos temos o carro perfeito para correr até mesmo mais rapido que a morte </span> </p> 
+                        <img src="lamborghini-revuelto-2023-laranja-4.png" alt="revulto" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <div class="logo">
+        <img src="ford_logo_feature.png" width="80%" alt="ford" />
+        <h2>.</h2>
+        <h2>.</h2>
+    </div>
+    <div class="centralizado">
+        <section id="catalog">
+            <h1><span id="textobranco"> Mustang dark horse</span></h1>
+        </section>
+    </div>
+
+    <div class="mustang">
+
+        <img src="ford-mustang-dark-horse.png" width="50%" alt="the dark horse" />
+        <div class="descricao">
+            <p><span id="textobranco">O Mustang Dark Horse é mais do que um carro, é uma força indomável que surge das sombras, como um predador noturno na vastidão da estrada. Seu design agressivo e esculpido, com linhas que cortam o ar como lâminas afiadas, reflete a intensidade de uma besta que não conhece limites. A pintura escura e os detalhes imponentes parecem absorver a luz ao seu redor, como se o próprio espaço-tempo se curvasse à sua presença.</span></p>
+        </div>
+    </div>
+    <div class="engine">
+        <img src="2024-Ford-Mustang-Dark-Horse-Engine.png" width="50%" alt="the dark horse heart" />
+
+
+        <div class="descricao-engine">
+            <p><span id="textobranco">Sob o capô, pulsa um motor V8 de 5.0 litros, capaz de gerar uma potência bruta que desafia as leis da física. O ronco desse motor é um grito primal que reverbera, acelerando a adrenalina a cada toque no acelerador. Com uma potência de 500 cavalos de força e torque imenso, o Dark Horse não só impressiona pela performance, mas também pela precisão em cada curva. Cada movimento, cada aceleração, cada virada é uma dança entre o controle absoluto e o caos sublime, em que o motorista se torna parte da máquina, como se ambos estivessem em sintonia com o universo.</span></p>
+        </div>
+    </div>
+
+    <div class="mustang">
+
+        <img src="horse-interior.png" width="50%" alt="the dark horse" />
+        <div class="descricao">
+            <p><span id="textobranco">O interior do Mustang Dark Horse é uma fusão perfeita de tecnologia e luxo, onde cada detalhe foi pensado para intensificar a experiência de dirigir. Os assentos esportivos em couro e camurça, com costuras contrastantes, abraçam o corpo em cada curva, enquanto o volante de acabamento premium oferece uma pegada firme, ideal para quem busca controle absoluto. O painel digital interativo e o sistema de áudio de alta performance criam uma atmosfera envolvente, onde cada comando, cada ajuste, é respondido com precisão. O ambiente é envolto em um clima de sofisticação agressiva, como se você estivesse no coração de uma máquina de alta performance, pronta para devorar qualquer estrada.</span></p>
+            <button>BUY NOW</button>
+        </div>
+    </div>
+    <div class=" centralizado"><p><span id="textobranco"> A experiência de dirigir o Dark Horse não é simplesmente uma viagem, é uma jornada transcendental, onde o asfalto vira um palco e o carro, a estrela principal. O vento que corta a lataria parece sussurrar segredos antigos enquanto o motor responde com um rugido que ecoa pelo horizonte. No Mustang Dark Horse, não se dirige apenas – se vive, se sente, se explode em cada momento.</span></p></div>
+
+
+
+    <div class="logo">
+        <img src="crvet.png" width="40%" alt="ford" />
+
+        <h2>.</h2>
+        <h2>.</h2>
+    </div>
+    <div class="centralizado">
+        <h1><span id="textobranco"> Corvet C8 Stingray</span></h1>
+    </div>
+
+    <div class="mustang">
+
+        <img src="stingray.png" width="50%" alt="the dark horse" />
+        <div class="descricao">
+            <p><span id="textobranco">O Corvette C8 Stingray não é apenas um carro; é uma revolução sobre rodas, uma obra-prima de engenharia que desafia os limites do que se entende por desempenho e estética. Com seu design futurista e linhas esculturais que parecem moldadas pela própria velocidade, o Stingray exala uma aura de sofisticação e poder. Sua silhueta, baixa e agressiva, capta o olhar e impõe respeito, como uma flecha pronta para disparar através do horizonte.</span></p>
+        </div>
+    </div>
+    <div class="engine">
+        <img src="2020-chevrolet-corvette-engine-2.png" width="50%" alt="the dark horse heart" />
+
+
+        <div class="descricao-engine">
+            <p><span id="textobranco">Sob seu capô, bate um motor V8 atmosférico de 6.2 litros, que desenvolve 495 cavalos de potência, entregando uma aceleração brutal e um desempenho digno de pistas de corrida. A sua arquitetura central, que posiciona o motor no meio do carro, transforma cada curva em uma experiência pura de equilíbrio e agilidade. Com um torque esmagador e uma resposta quase instantânea, o C8 Stingray se move com a precisão de uma máquina de precisão, dançando entre as linhas da estrada, como se o asfalto fosse seu território. O ronco profundo do motor V8 ecoa pelo ambiente, criando uma trilha sonora envolvente que só é superada pela pura sensação de velocidade.</span></p>
+        </div>
+    </div>
+
+    <div class="mustang">
+
+        <img src="c8 interior.png" width="50%" alt="the dark horse" />
+        <div class="descricao">
+            <p><span id="textobranco">Dentro do C8 Stingray, cada elemento foi projetado para proporcionar um ambiente imersivo e de total controle. O cockpit é um refúgio de luxo e tecnologia, com assentos esportivos em couro de alta qualidade que abraçam o corpo com a firmeza de uma segunda pele. O painel digital curvado, com gráficos nítidos e intuitivos, coloca todas as informações do carro ao alcance dos dedos, enquanto o volante de acabamento impecável oferece uma pegada firme e precisa. O sistema de áudio premium transforma o interior em um ambiente sonoro de altíssima fidelidade, enquanto os detalhes em fibra de carbono e alumínio escovado adicionam uma dose de esportividade refinada. É um espaço pensado para quem não só quer dirigir, mas viver cada segundo com intensidade.</span></p>
+            <button>BUY NOW</button>
+        </div>
+    </div>
+    <div class=" centralizado"><p><span id="textobranco">A experiência de pilotar o Corvette C8 Stingray vai além do simples ato de acelerar – é uma conexão visceral com a estrada, uma sinfonia de potência e precisão. Cada curva, cada aceleração, é uma explosão de pura adrenalina, como se o carro e o motorista fossem uma única entidade, fundidos na busca implacável pela perfeição. No Corvette C8 Stingray, a jornada é sempre épica, a velocidade é um reflexo do espírito, e a estrada, o palco onde a lenda se torna realidade.</span></p></div>
+
+
+
+
+    <div class="logo">
+        <img src="R.png" width="40%" alt="ford" />
+
+        <h2>.</h2>
+        <h2>.</h2>
+    </div>
+    <div class="centralizado">
+        <h1><span id="textobranco"> Dodge challenger srt "Demon"</span></h1>
+    </div>
+
+    <div class="mustang">
+
+        <img src="hellcat.png" width="50%" alt="the dark horse" />
+        <div class="descricao">
+            <p><span id="textobranco">O Dodge Challenger SRT Demon é a definição de um monstro nas ruas, um exército de potência embutido em uma carroceria muscular e imponente. Quando ele aparece, o tempo parece desacelerar, o ar vibra com a energia de um predador que está prestes a caçar. Seu design, robusto e agressivo, reflete a força bruta que se esconde sob o capô, com linhas imponentes e uma postura que impõe respeito. O capô com aberturas de ventilação, a grade dianteira agressiva e as rodas largas são um convite para quem tem coragem de desafiar a fera que o Challenger Demon realmente é.</span></p>
+        </div>
+    </div>
+    <div class="engine">
+        <img src="demon motor.png" width="50%" alt="the dark horse heart" />
+
+
+        <div class="descricao-engine">
+            <p><span id="textobranco">Sob o capô, o Demon entrega um espetáculo de força incontrolável: um motor V8 HEMI supercharged de 6.2 litros, capaz de gerar incríveis 840 cavalos de potência e impressionantes 1044 Nm de torque. Este monstro não é apenas rápido; ele é um furacão de aceleração, um monstro de arranque que pode ir de 0 a 100 km/h em meros 2,3 segundos, tornando-o o carro de produção mais rápido em aceleração. Seu ronco, profundo e primitivo, é um grito que atravessa a distância, uma promessa de que cada piscar de olhos na estrada será uma explosão de adrenalina. O Demon não pede permissão para acelerar – ele simplesmente devora o asfalto, entregando uma experiência visceral e avassaladora que faz você se sentir como se estivesse pilotando um foguete em direção ao desconhecido.</span></p>
+        </div>
+    </div>
+
+    <div class="mustang">
+
+        <img src="interior demon.png" width="50%" alt="the dark horse" />
+        <div class="descricao">
+
+            <p><span id="textobranco">Dentro do Challenger Demon, o ambiente é focado em performance pura. O interior é uma mistura de luxo e agressividade, com bancos esportivos em couro e Alcântara que oferecem conforto e firmeza. O volante de desempenho, de pegada firme, transmite cada nuance da estrada, enquanto o painel de instrumentos digital coloca todas as informações ao seu alcance. Mas não se engane: o Demon foi feito para ser mais do que um simples carro – ele é uma máquina de combate, e isso se reflete nos detalhes como os acabamentos em alumínio e o sistema de som premium que ecoa cada batida de potência que reverbera no motor. É um cockpit projetado para quem busca mais que um carro – busca uma experiência única, com um controle absoluto em um veículo feito para dominar qualquer terreno.</span></p>
+            <button>BUY NOW</button>
+        </div>
+    </div>
+    <div class=" centralizado"><p><span id="textobranco">Dentro do Challenger Demon, o ambiente é focado em performance pura. O interior é uma mistura de luxo e agressividade, com bancos esportivos em couro e Alcântara que oferecem conforto e firmeza. O volante de desempenho, de pegada firme, transmite cada nuance da estrada, enquanto o painel de instrumentos digital coloca todas as informações ao seu alcance. Mas não se engane: o Demon foi feito para ser mais do que um simples carro – ele é uma máquina de combate, e isso se reflete nos detalhes como os acabamentos em alumínio e o sistema de som premium que ecoa cada batida de potência que reverbera no motor. É um cockpit projetado para quem busca mais que um carro – busca uma experiência única, com um controle absoluto em um veículo feito para dominar qualquer terreno.</span></p></div>
+
+    <h2>.</h2>
+    <h2>.</h2>
+
+    <h2>.</h2>
+    <h2>.</h2>
+
+
+
+</body>
+</html>
+ 
