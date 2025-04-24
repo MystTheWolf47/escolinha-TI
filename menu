@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="StyleSheet.css" />
+    <meta charset="utf-8" />
+    <title>Please Stand By</title>
+    
+</head>
+
+<body style="background-color:#000000">
+    <header>
+        <div>
+            <nav>
+                <p><strong>Please Stand By</strong> </p>
+                <div>
+                    <input type="text" placeholder="Buscar modelo..." />
+                    <button>Buscar</button>
+                </div>
+
+                <ul>
+                    <a href="loginhtml.html">
+                        <button>Login</button>
+                    </a>
+                </ul>
+
+            </nav>
+            <div>
+                <h1><span id="textB">Drive Your Dream</span></h1>
+                <h3><span id="textB">To drive fast than death</span></h3>
+            </div>
+        </div>
+    </header>
+    <section id="catalog">
+        <div class="conteiner-Brand">
+
+            <a href="ferrarimenu.html">  <img src="purepng.com-ferrari-logoferrariferrari-carsferrari-automobilescarssportferrari-logo-17015274809730h2ic.png" class="brand-link-ferrari" alt="brand1" /></a>
+            <a href="porshe.html">  <img src="porsche-logo-brand-symbol-with-name-gold-design-german-car-automobile-illustration-with-black-background-free-vector.jpg" class="brand-link" alt="brand1" /></a>
+            <a href="koenig.html">  <img src="Koenigsegg-Emblema.png" class="brand-link" alt="brand1" /></a>
+            <a href="mustang.html">  <img src="large-ford-logo-0.png" class="brand-link" alt="brand1" /></a>
+            <a href="lamborguini.html">  <img src="Lamborghini-Logo.png" class="brand-link" alt="brand1" /></a>
+
+        </div>
+    </section>
+    <div class="centralizado">
+        <h1><span id="textB">Destaques</span></h1>
+    </div>
+    <div class="destaques">
+        <img src="koenigsegg-wants-you-1_1600x0w.png" alt="koenigseg" />
+        <div class="descricao">
+            <h3><span id="textB">Koenigsegg One:1 <br> um hipercarro feito para desafiar o impossível.</span></h3>
+            <div class="vermodelo">
+                <button>ver modelo</button>
+            </div>
+        </div>
+    </div>
+    <div class="destaques2">
+        <img src="ford-mustang-dark-horse.png" alt="koenigseg" />
+        <div class="descricao">
+            <h3><span id="textB">Mustang Dark Horse <br> potencia em sua forma bruta</span></h3>
+            <div class="vermodelo">
+                <button>ver modelo</button>
+            </div>
+        </div>
+    </div>
+    <div class="destaques">
+        <img src="2023-Porsche-718-Spyder-RS-High-Speed.jpg" alt="koenigseg" />
+        <div class="descricao">
+            <h3><span id="textB">Porsche Spyder: <br>  leveza, velocidade e pura adrenalina.</span></h3>
+            <div class="vermodelo">
+                <button>ver modelo</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
