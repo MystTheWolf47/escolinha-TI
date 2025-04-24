@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stiloferrari.css" />
+    <meta charset="utf-8" />
+    <script src="JavaScript.js" defer></script>
+    <title></title>
+
+</head>
+<body style="background-color:#000000">
+    <video autoplay muted loop id="bg-video">
+        <source src="document_4922436080638102065.mp4" type="video/mp4">
+    </video>
+    <header>
+        <div>
+            <nav>
+                <p><strong>Ferrari</strong> </p>
+                <div>
+                    <input type="text" placeholder="Buscar modelo..." />
+                    <button>Buscar</button>
+                </div>
+
+                <ul>
+                    <li><a href="HtmlPage.html"><span id="textB">menu</span></a> </li>
+                    <button>Login</button>
+                </ul>
+
+            </nav>
+
+            <div>
+
+                <h1><span id="textB">Ferrari</span></h1>
+                <h3><span id="textB">símbolo máximo da velocidade,<br> elegância e paixão automobilística italiana.</span></h3>
+            </div>
+        </div>
+
+    </header>
+    <div class="ja-ao-sei">
+        <div class="carrosel">
+            <button id="prev-button"><</button>
+
+            <div class="carrosel-images">
+                <a href=""><img src="wp1850910.jpg"  alt="carrosel" class="slider on" /></a>
+                <a href=""><img src="ferrari-purosangue-la-supercar-che-va-oltre-il-suv.jpg" class="slider" alt="carrosel" /></a>
+            </div>
+
+            <button id="next-button">></button>
+        </div>
+    </div>
+
+
+</body>
+</html>
